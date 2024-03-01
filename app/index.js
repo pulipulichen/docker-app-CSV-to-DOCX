@@ -33,7 +33,7 @@ let main = async function () {
     // await ShellExec(`pandoc --standalone --embed-resources --metadata pagetitle="${filenameNoExt}" "${file}" -o "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
     
     console.log(file)
-    await ShellExec(`csvtool -t COMMA -u TAB < "${file}" | echo | pandoc -f markdown -t docx -o "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
+    await ShellExec(`csvtool -t COMMA -u TAB cat "${file}" | pandoc -f markdown -t docx -o "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
     // await ShellExec(`pandoc --standalone --embed-resources --standalone "${tmpFile}" -o "${path.resolve(dirname, filenameNoExt + '.odt')}"`)
   }
 }
