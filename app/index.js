@@ -37,7 +37,8 @@ let main = async function () {
     // await ShellExec(`pandoc --standalone --embed-resources --standalone "${tmpFile}" -o "${path.resolve(dirname, filenameNoExt + '.odt')}"`)
 
     // await ShellExec(`ls`)
-    await ShellExec(`python3 /app/csv_to_docx.py "${file}" "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
+    // await ShellExec(`python3 /app/csv_to_docx.py "${file}" "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
+    await ShellExec(`/app/csv2htm.sh "${file}"`)
   }
 }
 
