@@ -1,0 +1,35 @@
+{
+  "name": "docker-app-HTML-to-DOCX",
+  "version": "1.0.0",
+  "description": "To extract the bookmarks in a PDF file.",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose down; docker-compose up --build",
+    "commit-docker-image": "docker-compose build; bash ./docker-build/image/commit-docker-image.sh",
+    "d0.build": "docker-compose build",
+    "d1.bash": "docker-compose run app bash",
+    "fix-docker-network-issue": "docker network prune"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-HTML-to-DOCX.git"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "Pulipuli Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/docker-app-HTML-to-DOCX/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/docker-app-HTML-to-DOCX#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "image-size": "1.1.1",
+    "request": "2.88.2",
+    "buffer-image-size": "0.6.4",
+    "xml2js": "0.6.2"
+  }
+}
