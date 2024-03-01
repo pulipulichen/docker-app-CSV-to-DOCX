@@ -1,5 +1,6 @@
 import csv
 from docx import Document
+import sys
 
 def csv_to_table(csv_file, docx_file):
     document = Document()
