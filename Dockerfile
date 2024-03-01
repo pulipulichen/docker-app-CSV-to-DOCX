@@ -3,14 +3,8 @@ FROM pudding/docker-app:node-18-7z-20230521
 
 RUN apt-get update --fix-missing
 
-COPY ./docker-build/pandoc-3.1.11.1-1-amd64.deb /pandoc-3.1.11.1-1-amd64.deb
-
-RUN apt-get install -y /pandoc-3.1.11.1-1-amd64.deb
-RUN rm -rf /pandoc-3.1.11.1-1-amd64.deb
-
-CMD ["node", "/app/index.js"]
-
-RUN apt-get install -y csvtool
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install python-docx
 
 COPY ./package.json /package.json
 WORKDIR /
