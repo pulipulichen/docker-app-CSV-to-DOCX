@@ -6,7 +6,7 @@ def csv_to_table(csv_file, docx_file):
     document = Document()
     table = document.add_table(rows=1, cols=0)
     with open(csv_file, 'r') as file:
-        print(file)
+        print(csv_file)
         csv_reader = csv.reader(file)
         for row in csv_reader:
             try:
