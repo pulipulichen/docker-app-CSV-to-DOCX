@@ -12,7 +12,7 @@ def csv_to_table(csv_file, docx_file):
             table_row = table.add_row()
             for cell in row:
                 print(cell.strip())
-                table_row.cells.append(cell.strip())
+                # table_row.cells.append(cell.strip())
             # table.add_row().cells = [cell.strip() for cell in row]
     
     document.save(docx_file)
