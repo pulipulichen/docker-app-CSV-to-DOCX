@@ -13,7 +13,10 @@ def csv_to_table(csv_file, docx_file):
             # for cell in row:
             #     print(cell.strip())
             #     # table_row.cells.append(cell.strip())
-            table.add_row().cells = [cell.strip() for cell in row]
+            # table.add_row().cells = [cell.strip() for cell in row]
+            table.add_row()
+            for i, cell in enumerate(row):
+                table.cell(table.rows[-1].index).text = cell.strip()
     
     document.save(docx_file)
 
