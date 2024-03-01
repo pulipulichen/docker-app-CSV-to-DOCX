@@ -9,7 +9,10 @@ def csv_to_table(csv_file, docx_file):
         print(csv_file)
         csv_reader = csv.reader(file)
         for row in csv_reader:
-            table.add_row().cells = [print(cell.strip()) for cell in row]
+            table_row = table.add_row()
+            for cell in row:
+                table_row.cells.append(cell.strip())
+            # table.add_row().cells = [cell.strip() for cell in row]
     
     document.save(docx_file)
 
