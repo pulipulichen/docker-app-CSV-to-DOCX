@@ -36,7 +36,8 @@ let main = async function () {
     // await ShellExec(`csvtool -t COMMA -u TAB cat "${file}" | pandoc -f markdown -t docx -o "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
     // await ShellExec(`pandoc --standalone --embed-resources --standalone "${tmpFile}" -o "${path.resolve(dirname, filenameNoExt + '.odt')}"`)
 
-    await ShellExec(`pwd;cd /;python /app/csv_to_docx.py "${file}" "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
+    await ShellExec(`ls`);
+    await ShellExec(`ls;pwd;cd /;python /app/csv_to_docx.py "${file}" "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
   }
 }
 
