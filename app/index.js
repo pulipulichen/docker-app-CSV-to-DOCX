@@ -5,7 +5,7 @@ const GetFiles = require('./lib/GetFiles')
 const path = require('path')
 const fs = require('fs')
 
-const cleanHTML = require('./cleanHTML')
+const csvToHTML = require('./csv-to-html')
 
 // convert a.tif -thumbnail 64x64^ -gravity center -extent 64x64 b.ico
 
@@ -38,7 +38,10 @@ let main = async function () {
 
     // await ShellExec(`ls`)
     // await ShellExec(`python3 /app/csv_to_docx.py "${file}" "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
-    await ShellExec(`/app/csv2htm.sh "${file}"`)
+    let htmlContent = await csvToHTML(file)
+    let tmpFile = `/tmp/csv.html`
+    fs.writeFileSync(tmpFile, htmlContent, 'utf8')
+    await ShellExec(`pandoc --standalone --embed-resources --metadata pagetitle="${filenameNoExt}" "${tmpFile}" -o "${path.resolve(dirname, filenameNoExt + '.docx')}"`)
   }
 }
 
