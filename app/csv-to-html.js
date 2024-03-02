@@ -13,7 +13,7 @@ function csvToHtml(csvFileName) {
         .pipe(csv())
         .on('data', (row) => {
             // Process each row of data here
-            console.log(row);
+            // console.log(row);
             // You can manipulate the data here, for example, to create an HTML table
             // For simplicity, let's assume the first row contains headers
 
